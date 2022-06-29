@@ -1,6 +1,7 @@
 package com.beyzanurtas.upschool_capstoneproject.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -29,6 +30,11 @@ class ProductsAdapter(var productsList : ArrayList<Products>)
         holder.binding.productTitleTextView.text=products.product_title
         holder.binding.productPriceTextView.text="$" + products.product_price
         holder.binding.productRatingSingleProduct.rating=products.product_rate.toFloat()
+        if(products.sale_state==1){
+            holder.binding.saleLabel.visibility= View.VISIBLE
+        } else {
+            holder.binding.saleLabel.visibility= View.GONE
+        }
         holder.binding.productCardView.setOnClickListener {
 
            val action=  ProductsFragmentDirections.actionProductsFragmentToProductFragment(products.id)

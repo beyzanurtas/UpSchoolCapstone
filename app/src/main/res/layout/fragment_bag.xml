@@ -30,7 +30,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/empty_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="-70dp"
@@ -41,13 +41,13 @@
             app:srcCompat="@drawable/empty_bag" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/empty_bag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="EMPTY BAG!"
             android:visibility="gone"
             style="@style/label_style"
-            app:layout_constraintBottom_toTopOf="@+id/imageView4"
+            app:layout_constraintBottom_toTopOf="@+id/empty_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 

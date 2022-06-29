@@ -5,7 +5,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/background">
 
         <ImageView
             android:id="@+id/product_image"
@@ -23,9 +24,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
             android:fontFamily="@font/alata"
             android:textColor="@color/card_title"
             android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/product_image" />
 
@@ -51,8 +54,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
             android:fontFamily="@font/alata"
             android:textColor="@color/dark_gray"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/productRating_singleProduct" />
 
@@ -63,7 +68,7 @@
             android:layout_marginStart="12dp"
             android:fontFamily="@font/alata"
             android:textColor="@color/dark_gray"
-            android:textSize="16sp"
+            android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/description" />
 

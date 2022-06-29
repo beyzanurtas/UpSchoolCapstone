@@ -11,6 +11,6 @@
     <color name="light_gray">#C8BBBE</color>
     <color name="background">#F5F5F5</color>
     <color name="gray">#736F6E</color>
-    <color name="card_background">#C8BBBE</color>
+    <color name="card_background">#FFFFFF</color>
     <color name="card_title">#012324</color>
 </resources>

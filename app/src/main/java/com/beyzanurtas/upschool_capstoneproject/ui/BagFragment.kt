@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -44,6 +45,19 @@ class BagFragment : Fragment() {
         viewModel.productsList.observe(viewLifecycleOwner) { productsList ->
 
             val total= viewModel.cartTotal(productsList)
+            if(productsList.isEmpty()){
+                bagBinding.emptyBag.visibility= View.VISIBLE
+                bagBinding.emptyImage.visibility= View.VISIBLE
+                bagBinding.checkoutButton.visibility= View.GONE
+                bagBinding.total.visibility= View.GONE
+                bagBinding.priceTotal.visibility= View.GONE
+            } else {
+                bagBinding.emptyBag.visibility= View.GONE
+                bagBinding.emptyImage.visibility= View.GONE
+                bagBinding.checkoutButton.visibility= View.VISIBLE
+                bagBinding.total.visibility= View.VISIBLE
+                bagBinding.priceTotal.visibility= View.VISIBLE
+            }
             bagBinding.setPriceTotal(total)
             adapter= BagAdapter(productsList, object : BagInterface{
                 override fun deleteFromBag(id: Int) {
@@ -51,6 +65,8 @@ class BagFragment : Fragment() {
                     viewModel.getBagProductsByUser(user)
                     viewModel.productsList.observe(viewLifecycleOwner){
                         adapter.updateList(it)
+
+                        Toast.makeText(activity,"Product has been removed from the bag!",Toast.LENGTH_SHORT).show()
                     }
                 }
             })

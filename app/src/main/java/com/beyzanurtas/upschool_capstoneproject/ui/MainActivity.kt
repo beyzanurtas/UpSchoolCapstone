@@ -35,6 +35,10 @@ class MainActivity : AppCompatActivity() {
                     bottomNavigationView.visibility=View.VISIBLE
                     findViewById<TextView>(R.id.toolbar_label).text=""
                 }
+                R.id.productsFragment -> {
+                    bottomNavigationView.visibility=View.VISIBLE
+                    findViewById<TextView>(R.id.toolbar_label).text="Products"
+                }
                 R.id.shop -> {
                     bottomNavigationView.visibility=View.VISIBLE
                     findViewById<TextView>(R.id.toolbar_label).text="Categories"

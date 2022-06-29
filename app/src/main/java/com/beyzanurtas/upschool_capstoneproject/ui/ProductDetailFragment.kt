@@ -58,7 +58,7 @@ class ProductDetailFragment : Fragment() {
                     val sale_state= product.sale_state
                     viewModel.addToBag(userId,title,price,description,category,image,rate,count, sale_state)
 
-                    Toast.makeText(activity,"Product added to bag!",Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity,"Product added to bag!",Toast.LENGTH_SHORT).show()
                 }
             }
         }
